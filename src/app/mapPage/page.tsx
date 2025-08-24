@@ -1,7 +1,14 @@
 // app/mapPage/page.tsx
 "use client";
-import MapView from '@/components/map/MapView';
 import BackgroundVideo from '@/components/BackgroundVideo';
+
+import dynamic from 'next/dynamic';
+
+const MapView = dynamic(() => import('@/components/map/MapView'), {
+    ssr: false,
+});
+
+
 
 export default function MapPage() {
     return (

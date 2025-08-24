@@ -84,6 +84,17 @@ const MapSVG: React.FC<mapProps> = ({setStateName}) => {
     const [svgJSX, setSvgJSX] = useState<React.ReactElement | null>(null);
     const [isLoading, setIsLoading] = useState<boolean>(true);
     const [clickedState, setClickedState] = useState<string | null>(null);
+    const handleStateClick = (stateId: string, stateName: string) => {
+        setClickedState(stateId);
+
+        // Clear the clicked state after a short delay
+        setTimeout(() => {
+            setClickedState(null);
+        }, 200);
+        // Logic to update the bar below will go here
+        console.log(`Clicked on: ${stateName} (${stateId})`);
+        setStateName(stateName);
+    };
 
     useEffect(() => {
         fetch('/us.svg')
@@ -138,19 +149,8 @@ const MapSVG: React.FC<mapProps> = ({setStateName}) => {
                 console.error('Fetch error:', error);
                 setIsLoading(false);
             });
-    }, [clickedState]);
 
-    const handleStateClick = (stateId: string, stateName: string) => {
-        setClickedState(stateId);
-
-        // Clear the clicked state after a short delay
-        setTimeout(() => {
-            setClickedState(null);
-        }, 200);
-        // Logic to update the bar below will go here
-        console.log(`Clicked on: ${stateName} (${stateId})`);
-        setStateName(stateName);
-    };
+    }, [clickedState, handleStateClick]);
 
     if (isLoading) {
         return <div>Loading map...</div>;
