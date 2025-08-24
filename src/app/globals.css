@@ -24,3 +24,19 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.ocean-gradient-overlay {
+  background-image: radial-gradient( circle, rgba(0, 71, 140, 0.97), rgba(0, 119, 250, 0.9));
+}
+
+/* tailwind.css */
+@layer utilities {
+  .animate-ping {
+    animation: ping 1s cubic-bezier(0, 0, 0.2, 1) infinite;
+  }
+
+  @keyframes ping {
+    0% { transform: scale(1); opacity: 1; }
+    75%, 100% { transform: scale(2); opacity: 0; }
+  }
+}
