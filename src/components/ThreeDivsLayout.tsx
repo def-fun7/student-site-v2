@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import { useState } from 'react';
-import MapSVG from './MapSVG';
+import MapSVG from './map/MapSVG';
 import TopBar from './TopBar';
 import BottomBar from './BottomBar';
 

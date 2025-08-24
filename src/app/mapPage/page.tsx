@@ -1,6 +1,6 @@
 // app/mapPage/page.tsx
 "use client";
-import MapView from '@/components/MapView';
+import MapView from '@/components/map/MapView';
 import BackgroundVideo from '@/components/BackgroundVideo';
 
 export default function MapPage() {
