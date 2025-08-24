@@ -10,7 +10,7 @@ import useRealtimeMap from '../../hooks/useRealtimeMap';
 import MapLoader from './MapLoader';
 import { toast } from 'react-hot-toast';
 import { useEffect, useState } from 'react';
-import { MapIcon, ArrowPathIcon } from '@heroicons/react/24/outline';
+import { ArrowPathIcon } from '@heroicons/react/24/outline';
 
 const center: LatLngExpression = [31.5497, 74.32236]; // Lahore
 

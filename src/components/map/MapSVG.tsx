@@ -121,7 +121,7 @@ const MapSVG: React.FC<mapProps> = ({setStateName}) => {
                         d: d,
                         style: reactStyleObject,
                         className: dynamicClasses,
-                        onClick: (event: React.MouseEvent<SVGPathElement, MouseEvent>) => handleStateClick(stateId, stateName),
+                        onClick: () => handleStateClick(stateId, stateName),
                     });
                 });
 

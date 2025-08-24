@@ -1,16 +1,17 @@
 // components/RealtimeMapWrapper.tsx
 "use client";
 
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { supabase } from '@/lib/supabase';
-import {toast} from 'react-hot-toast';
+import { toast } from 'react-hot-toast';
+
 interface YourTableRow {
     id: string;
     name: string; // Assuming you have a 'name' field for display
     created_at: string;
     lat: number;
     long: number;
-    [key: string]: any;
+    [key: string]: Array<string> | string | number; // For any additional fields
 }
 
 interface RealtimeMapHookReturn {
